@@ -1,10 +1,9 @@
-name: Enviar Correo a las 11:50 AM COL
+name: Enviar Correo cada 10 minutos
 
 on:
   schedule:
-    - cron: "50 16 * * *"  # 11:50 AM COL (Colombia está en UTC-5)
-
-  workflow_dispatch: # Permite ejecutarlo manualmente si lo necesitas
+    - cron: "*/10 * * * *"  # Se ejecuta cada 10 minutos
+  workflow_dispatch: # Permite ejecución manual
 
 jobs:
   send-email:
