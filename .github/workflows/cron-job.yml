@@ -1,0 +1,29 @@
+name: Enviar Correo a las 11:36 AM COL
+
+on:
+  schedule:
+    - cron: "36 16 * * *"  # 11:36 AM COL (Colombia está en UTC-5)
+
+  workflow_dispatch: # Permite ejecutarlo manualmente si lo necesitas
+
+jobs:
+  send-email:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clonar repositorio
+        uses: actions/checkout@v3
+
+      - name: Instalar Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18"
+
+      - name: Instalar dependencias
+        run: npm install
+
+      - name: Ejecutar script
+        env:
+          EMAIL_USER: ${{ secrets.EMAIL_USER }}
+          EMAIL_PASS: ${{ secrets.EMAIL_PASS }}
+        run: node script.js
