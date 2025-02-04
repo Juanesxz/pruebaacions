@@ -1,9 +1,8 @@
-name: Enviar Correo a las 11:40 AM COL
+name: Enviar Correo a las 11:50 AM COL
 
 on:
   schedule:
-    - cron: "40 16 * * *"
-
+    - cron: "50 16 * * *"  # 11:50 AM COL (Colombia está en UTC-5)
 
   workflow_dispatch: # Permite ejecutarlo manualmente si lo necesitas
 
