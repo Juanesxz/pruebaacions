@@ -1,4 +1,4 @@
-name: Enviar Correo a las 11:36 AM COL
+name: Enviar Correo a las 11:40 AM COL
 
 on:
   schedule:
