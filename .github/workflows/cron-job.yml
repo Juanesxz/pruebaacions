@@ -1,28 +1,28 @@
-name: Enviar Correo cada 10 minutos
+# name: Enviar Correo cada 10 minutos
 
-on:
-  schedule:
-    - cron: "*/1 * * * *"  # Se ejecuta cada 10 minutos
-  workflow_dispatch: # Permite ejecución manual
+# on:
+#   schedule:
+#     - cron: "*/1 * * * *"  # Se ejecuta cada 10 minutos
+#   workflow_dispatch: # Permite ejecución manual
 
-jobs:
-  send-email:
-    runs-on: ubuntu-latest
+# jobs:
+#   send-email:
+#     runs-on: ubuntu-latest
 
-    steps:
-      - name: Clonar repositorio
-        uses: actions/checkout@v3
+#     steps:
+#       - name: Clonar repositorio
+#         uses: actions/checkout@v3
 
-      - name: Instalar Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: "18"
+#       - name: Instalar Node.js
+#         uses: actions/setup-node@v3
+#         with:
+#           node-version: "18"
 
-      - name: Instalar dependencias
-        run: npm install
+#       - name: Instalar dependencias
+#         run: npm install
 
-      - name: Ejecutar script
-        env:
-          EMAIL_USER: ${{ secrets.EMAIL_USER }}
-          EMAIL_PASS: ${{ secrets.EMAIL_PASS }}
-        run: node script.js
+#       - name: Ejecutar script
+#         env:
+#           EMAIL_USER: ${{ secrets.EMAIL_USER }}
+#           EMAIL_PASS: ${{ secrets.EMAIL_PASS }}
+#         run: node script.js
